@@ -1,0 +1,26 @@
+import json
+import boto3
+import logging
+import zipfile
+import ntpath
+import io
+import re
+import botocore
+import os
+from botocore.vendored import requests
+
+aws_access_key_id = "***************"
+aws_secret_access_key = "**************************"
+region = "us-***-1"
+
+
+client = boto3.client('lex-runtime',aws_access_key_id = "***************",
+aws_secret_access_key = "**********", region_name = "us-****-1")
+response = client.post_text(
+    botName='******',
+    botAlias = '******',
+    userId='string',
+    sessionAttributes={'string': 'string'},
+    inputText='What is the growth'
+)
+print(response)
